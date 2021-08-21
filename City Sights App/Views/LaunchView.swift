@@ -6,16 +6,29 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct LaunchView: View {
+    
+    @EnvironmentObject var model: ContentModel
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if model.authorizationState == .notDetermined {
+            
+        }
+        else if model.authorizationState == CLAuthorizationStatus.authorizedAlways ||
+                    model.authorizationState == CLAuthorizationStatus.authorizedWhenInUse {
+            HomeView()
+        }
+        else{
+            
+        }
     }
 }
 
 struct LaunchView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchView()
+            .environmentObject(ContentModel())
     }
 }
