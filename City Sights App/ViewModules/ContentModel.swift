@@ -82,7 +82,7 @@ class ContentModel: NSObject, ObservableObject, CLLocationManagerDelegate{
             URLQueryItem(name: Constants.LIMIT, value: Constants.LIMITVALUE)
         ]
         
-        var url = urlComponents?.url
+        let url = urlComponents?.url
         
         if let url = url {
             
@@ -95,13 +95,24 @@ class ContentModel: NSObject, ObservableObject, CLLocationManagerDelegate{
             let dataTask = session.dataTask(with: request) {(data, response, error) in
                 if error == nil {
                     do {
+                        
                         let decoder = JSONDecoder()
                         let result = try decoder.decode(BusinessSearch.self, from: data!)
+                        
+                        var businesses = result.businesses
+                        businesses.sort { (b1,b2) -> Bool in
+                            return b1.distance ?? 0 < b2.distance ?? 0
+                        }
+                        
+                        for b in businesses {
+                            b.getImageData()
+                        }
+                        
                         DispatchQueue.main.async {
                             if category == Constants.ARTS {
-                                self.sights = result.businesses
+                                self.sights = businesses
                             }else if category == Constants.RESTAURANTS {
-                                self.restaurants = result.businesses
+                                self.restaurants = businesses
                             }
                         }
                     }
