@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2706808326D44FCE0050E274 /* BusinessDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706808226D44FCE0050E274 /* BusinessDetail.swift */; };
 		2727D6D626D047D0000E14E0 /* CitySightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727D6D526D047D0000E14E0 /* CitySightsApp.swift */; };
 		2727D6D826D047D0000E14E0 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727D6D726D047D0000E14E0 /* LaunchView.swift */; };
 		2727D6DA26D047D1000E14E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2727D6D926D047D1000E14E0 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2706808226D44FCE0050E274 /* BusinessDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetail.swift; sourceTree = "<group>"; };
 		2727D6D226D047CF000E14E0 /* City Sights App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Sights App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2727D6D526D047D0000E14E0 /* CitySightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySightsApp.swift; sourceTree = "<group>"; };
 		2727D6D726D047D0000E14E0 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2706808126D44FB00050E274 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2706808226D44FCE0050E274 /* BusinessDetail.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		2727D6C926D047CF000E14E0 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 				277EB55B26D4344C0013D832 /* BusinessSectionHeader.swift */,
 				277EB55D26D439370013D832 /* BusinessSection.swift */,
 				277EB55F26D43F850013D832 /* BusinessRow.swift */,
+				2706808126D44FB00050E274 /* Detail */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				277EB55C26D4344C0013D832 /* BusinessSectionHeader.swift in Sources */,
 				27E28C1E26D0FBC700CDDD2E /* Constants.swift in Sources */,
 				2727D6EA26D07C40000E14E0 /* Business.swift in Sources */,
+				2706808326D44FCE0050E274 /* BusinessDetail.swift in Sources */,
 				2727D6D626D047D0000E14E0 /* CitySightsApp.swift in Sources */,
 				27E28C2626D1068300CDDD2E /* BusinessList.swift in Sources */,
 				277EB55E26D439370013D832 /* BusinessSection.swift in Sources */,

@@ -13,7 +13,7 @@ struct BusinessRow: View {
     
     var body: some View {
     
-        VStack{
+        VStack (alignment: .leading){
             HStack{
                 
                 let uiImage = UIImage(data: business.imageData ?? Data())
@@ -40,5 +40,6 @@ struct BusinessRow: View {
             
             Divider()
         }
+        .foregroundColor(.black)
     }
 }

@@ -14,24 +14,25 @@ struct HomeView: View {
     
     var body: some View {
         if model.restaurants.count != 0 || model.sights.count != 0 {
-            
-            if !isMapShowing {
-                VStack{
-                    HStack{
-                        Image(systemName: "location")
-                        Text("San Fransisco")
-                        Spacer()
-                        Text("Switch to map view")
+            NavigationView {
+                if !isMapShowing {
+                    VStack{
+                        HStack{
+                            Image(systemName: "location")
+                            Text("San Fransisco")
+                            Spacer()
+                            Text("Switch to map view")
+                        }
+                        Divider()
+                        BusinessList()
+                        
                     }
-                    Divider()
-                    BusinessList()
+                    .padding([.horizontal, .top])
+                    .navigationBarHidden(true)
+                }else{
                     
                 }
-                .padding([.horizontal, .top])
-            }else{
-                
             }
-            
         }else {
             ProgressView()
         }
