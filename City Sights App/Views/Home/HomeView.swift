@@ -11,6 +11,7 @@ struct HomeView: View {
     
     @EnvironmentObject var model: ContentModel
     @State var isMapShowing = false
+    @State var selectedBusiness:Business?
     
     var body: some View {
         if model.restaurants.count != 0 || model.sights.count != 0 {
@@ -34,8 +35,11 @@ struct HomeView: View {
                     .padding([.horizontal, .top])
                     .navigationBarHidden(true)
                 }else{
-                    BusinessMap()
+                    BusinessMap(selectedBusiness: $selectedBusiness)
                         .ignoresSafeArea()
+                        .sheet(item: $selectedBusiness) { business in
+                            BusinessDetail(business: business)
+                        }
                 }
             }
         }else {
@@ -44,8 +48,3 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
